@@ -1,15 +1,15 @@
 import express from "express";
 import {
   addVideo,
-  updateVideo,
-  deleteVideo,
   addView,
   getByTag,
   getVideo,
+  random,
   search,
-  subscribedVideo,
-  trendVideo,
-  randomVideo,
+  sub,
+  trend,
+  updateVideo,
+  deleteVideo,
 } from "../controllers/video.js";
 import { verifyToken } from "../verifyToken.js";
 
@@ -21,9 +21,9 @@ router.put("/:id", verifyToken, updateVideo);
 router.delete("/:id", verifyToken, deleteVideo);
 router.get("/find/:id", getVideo);
 router.put("/view/:id", addView);
-router.get("/trend", trendVideo);
-router.get("/random", randomVideo);
-router.get("/sub", verifyToken, subscribedVideo);
+router.get("/trend", trend);
+router.get("/random", random);
+router.get("/sub", verifyToken, sub);
 router.get("/tags", getByTag);
 router.get("/search", search);
 

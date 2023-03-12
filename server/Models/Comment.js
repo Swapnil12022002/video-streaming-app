@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const CommentSchema = mongoose.Schema(
+const CommentSchema = new mongoose.Schema(
   {
     userId: {
       type: String,
@@ -10,7 +10,7 @@ const CommentSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    description: {
+    desc: {
       type: String,
       required: true,
     },
