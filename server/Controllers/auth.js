@@ -31,7 +31,7 @@ export const signIn = async (req, res, next) => {
     const { password, ...rest } = user._doc; //returning the whole user object except the password.
 
     res
-      .cookie("access-token", token, {
+      .cookie("access_token", token, {
         httpOnly: true,
       })
       .status(200)
